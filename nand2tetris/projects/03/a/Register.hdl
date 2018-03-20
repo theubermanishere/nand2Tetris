@@ -14,5 +14,36 @@ CHIP Register {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    Mux(a=flipOut0,b=in[0],sel=load,out=lol0);
+	DFF(in=lol0,out=out[0],out=flipOut0);
+	Mux(a=flipOut1,b=in[1],sel=load,out=lol1);
+	DFF(in=lol1,out=out[1],out=flipOut1);
+	Mux(a=flipOut2,b=in[2],sel=load,out=lol2);
+	DFF(in=lol2,out=out[2],out=flipOut2);
+	Mux(a=flipOut3,b=in[3],sel=load,out=lol3);
+	DFF(in=lol3,out=out[3],out=flipOut3);
+    Mux(a=flipOut4,b=in[4],sel=load,out=lol4);
+	DFF(in=lol4,out=out[4],out=flipOut4);
+	Mux(a=flipOut5,b=in[5],sel=load,out=lol5);
+	DFF(in=lol5,out=out[5],out=flipOut5);
+	Mux(a=flipOut6,b=in[6],sel=load,out=lol6);
+	DFF(in=lol6,out=out[6],out=flipOut6);
+	Mux(a=flipOut7,b=in[7],sel=load,out=lol7);
+	DFF(in=lol7,out=out[7],out=flipOut7);
+    Mux(a=flipOut8,b=in[8],sel=load,out=lol8);
+	DFF(in=lol8,out=out[8],out=flipOut8);
+	Mux(a=flipOut9,b=in[9],sel=load,out=lol9);
+	DFF(in=lol9,out=out[9],out=flipOut9);
+	Mux(a=flipOut10,b=in[10],sel=load,out=lol10);
+	DFF(in=lol10,out=out[10],out=flipOut10);
+	Mux(a=flipOut11,b=in[11],sel=load,out=lol11);
+	DFF(in=lol11,out=out[11],out=flipOut11);
+    Mux(a=flipOut12,b=in[12],sel=load,out=lol12);
+	DFF(in=lol12,out=out[12],out=flipOut12);
+	Mux(a=flipOut13,b=in[13],sel=load,out=lol13);
+	DFF(in=lol13,out=out[13],out=flipOut13);
+	Mux(a=flipOut14,b=in[14],sel=load,out=lol14);
+	DFF(in=lol14,out=out[14],out=flipOut14);
+	Mux(a=flipOut15,b=in[15],sel=load,out=lol15);
+	DFF(in=lol15,out=out[15],out=flipOut15);
 }
