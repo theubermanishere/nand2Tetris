@@ -15,5 +15,27 @@ CHIP RAM64 {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    DMux(in=load,sel=address[5],a=groupa,b=groupb);
+	DMux(in=groupa,sel=address[4],a=groupa1,b=groupa2);
+	DMux(in=groupb,sel=address[4],a=groupb1,b=groupb2);
+	DMux(in=groupa1,sel=address[3],a=reg1,b=reg2);
+	DMux(in=groupa2,sel=address[3],a=reg3,b=reg4);
+	DMux(in=groupb1,sel=address[3],a=reg5,b=reg6);
+	DMux(in=groupb2,sel=address[3],a=reg7,b=reg8);
+	RAM8(in=in,load=reg1,address=address[0..2],out=out1);
+	RAM8(in=in,load=reg2,address=address[0..2],out=out2);
+	RAM8(in=in,load=reg3,address=address[0..2],out=out3);
+	RAM8(in=in,load=reg4,address=address[0..2],out=out4);
+	RAM8(in=in,load=reg5,address=address[0..2],out=out5);
+	RAM8(in=in,load=reg6,address=address[0..2],out=out6);
+	RAM8(in=in,load=reg7,address=address[0..2],out=out7);
+	RAM8(in=in,load=reg8,address=address[0..2],out=out8);
+	Mux16(a=out1,b=out2,sel=address[3],out=groupA1);
+	Mux16(a=out3,b=out4,sel=address[3],out=groupA2);
+	Mux16(a=out5,b=out6,sel=address[3],out=groupB1);
+	Mux16(a=out7,b=out8,sel=address[3],out=groupB2);
+	Mux16(a=groupA1,b=groupA2,sel=address[4],out=groupA);
+	Mux16(a=groupB1,b=groupB2,sel=address[4],out=groupB);
+	Mux16(a=groupA,b=groupB,sel=address[5],out=out);
+
 }
